@@ -4,6 +4,27 @@
   
   
   <entry>
+    <title>LeetCode 191.位1的个数</title>
+    <link href="/2025/01/26/LeetCode-191-%E4%BD%8D1%E7%9A%84%E4%B8%AA%E6%95%B0/"/>
+    <url>/2025/01/26/LeetCode-191-%E4%BD%8D1%E7%9A%84%E4%B8%AA%E6%95%B0/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>LeetCode题库内的一道简单的算法题: <a href="https://leetcode.cn/problems/number-of-1-bits/description/">191.位1的个数</a>, 使用C语言实现<br>要求: </p><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs makefile"><span class="hljs-section">输入: n = 10 (对应二进制: 1010)</span><br><span class="hljs-section">输出: 2 (有2个1)</span><br><br><span class="hljs-section">输入: n = 0 (对应二进制: 0)</span><br><span class="hljs-section">输出: 0 (有0个1)</span><br></code></pre></td></tr></table></figure><h1 id="Idea"><a href="#Idea" class="headerlink" title="Idea"></a>Idea</h1><p>对于这个问题，我的思路是先将n转换为一个二进制数，然后再遍历字符串记录1的个数， 最后返回就可以了</p><h1 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;string.h&gt;</span></span><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> &#123;<br>    <span class="hljs-type">int</span> sum = <span class="hljs-number">0</span>;<br><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;&gt; &quot;</span>);<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;n);<br>    <span class="hljs-type">char</span> res[<span class="hljs-number">33</span>] = <span class="hljs-string">&quot;&quot;</span>;<br><span class="hljs-keyword">while</span> (n &gt;= <span class="hljs-number">1</span>) &#123;<br><span class="hljs-type">char</span> tmp[<span class="hljs-number">2</span>];tmp[<span class="hljs-number">0</span>] = (n % <span class="hljs-number">2</span>) + <span class="hljs-string">&#x27;0&#x27;</span>;tmp[<span class="hljs-number">1</span>] = <span class="hljs-string">&#x27;\0&#x27;</span>;<br><span class="hljs-built_in">strcat</span>(res, tmp);<br>n /= <span class="hljs-number">2</span>;<br>&#125;<br></code></pre></td></tr></table></figure><p>这里得到的是倒置的二进制数，因为我们的目标是1的个数，所以倒置就够用了， 接下来遍历字符串就可以了</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-built_in">strlen</span>(res); i++)<br><span class="hljs-keyword">if</span> (res[i] == <span class="hljs-string">&#x27;1&#x27;</span>)<br>sum++;<br><br><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, sum);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure><p>这只是一个demo,其实还有很多可以优化的地方</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>leetcode</tag>
+      
+      <tag>C/C++</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>简单的计算器(C语言)</title>
     <link href="/2025/01/26/%E7%AE%80%E5%8D%95%E7%9A%84%E8%AE%A1%E7%AE%97%E5%99%A8-C%E8%AF%AD%E8%A8%80/"/>
     <url>/2025/01/26/%E7%AE%80%E5%8D%95%E7%9A%84%E8%AE%A1%E7%AE%97%E5%99%A8-C%E8%AF%AD%E8%A8%80/</url>
